@@ -5,7 +5,6 @@
   position: fixed;
   font-weight: bold;
 
-
   a {
     font-size: 1rem;
     //! i don't know why font-weight doesn't work
@@ -21,5 +20,17 @@
     margin: 1em 0;
     border: 10px solid map-get($colors, "orange");
     border-radius: 100%;
+    transition: margin-bottom .5s , height .3s;
+  }
+  .list--item:last-child {
+    a {
+      margin-top: unset;
+      margin-bottom: unset;
+    }
+  }
+  a:active {
+    transition: margin-bottom .5s , height .3s;
+    margin-bottom: 5em;
+    height: calc(8em - 20px);
   }
 }

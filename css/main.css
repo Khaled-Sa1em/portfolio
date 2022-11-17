@@ -321,4 +321,14 @@ p {
   margin: 1em 0;
   border: 10px solid #ff6f61;
   border-radius: 100%;
+  transition: margin-bottom 0.5s, height 0.3s;
+}
+.nav .list--item:last-child a {
+  margin-top: unset;
+  margin-bottom: unset;
+}
+.nav a:active {
+  transition: margin-bottom 0.5s, height 0.3s;
+  margin-bottom: 5em;
+  height: calc(8em - 20px);
 }

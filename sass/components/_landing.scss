@@ -18,8 +18,7 @@
       }
 
       .landing--description {
-        $color: map-get($colors, "dark-blue");
-        color:$color;
+        color: map-get($colors, "accent-light");
       }
     }
 
@@ -28,7 +27,7 @@
       min-width: 300px;
 
       .img {
-        width: min(100%, 400px);
+        width: min(100%, 300px);
         border-radius: 50%;
       }
     }
@@ -36,10 +35,20 @@
 }
 
 // ! correct it and tell what should i do
-// @media screen and (max-width: 992px) {
-//   .landing {
-//     .container {
-//     //   flex-direction: column;
-//     }
-//   }
-// }
+@media screen and (max-width: 992px) {
+  .landing {
+    .container {
+      // background: red;
+      flex-direction: column-reverse;
+      gap: 2em;
+
+      .landing--portrait {
+        padding-top: 2em;
+      }
+
+      .landing--text {
+        text-align: center;
+      }
+    }
+  }
+}

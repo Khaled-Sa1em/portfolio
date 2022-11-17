@@ -241,20 +241,17 @@ p {
 }
 .landing .container .landing--text {
   flex: 2;
+  color: #f4f4f4;
 }
 .landing .container .landing--text .landing--title {
   width: 100%;
   min-width: 600px;
   margin-bottom: 0.5em;
-  color: #fff;
   text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff;
 }
-.landing .container .landing--text .landing--description {
-  color: #f4f4f4;
-}
 .landing .container .landing--portrait {
-  flex: 1;
-  min-width: 300px;
+  flex: 1.5;
+  text-align: center;
 }
 .landing .container .landing--portrait .img {
   width: min(100%, 300px);
@@ -264,12 +261,23 @@ p {
 @media screen and (max-width: 992px) {
   .landing .container {
     flex-direction: column-reverse;
-    gap: 2em;
+    gap: 4em;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
   }
   .landing .container .landing--portrait {
-    padding-top: 2em;
+    flex: 0;
+  }
+  .landing .container .landing--portrait .img {
+    width: 200px;
   }
   .landing .container .landing--text {
+    flex: 0;
     text-align: center;
+  }
+  .landing .container .landing--text .landing--title {
+    min-width: unset;
+    font-size: 4.5rem;
   }
 }

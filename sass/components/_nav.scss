@@ -1,0 +1,25 @@
+.nav {
+  z-index: 1111;
+  bottom: 30px;
+  right: 30px;
+  position: fixed;
+  font-weight: bold;
+
+
+  a {
+    font-size: 1rem;
+    //! i don't know why font-weight doesn't work
+    font-weight: bold;
+    text-transform: uppercase;
+    background: transparent;
+    width: 8em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: map-get($colors, "orange");
+    margin: 1em 0;
+    border: 10px solid map-get($colors, "orange");
+    border-radius: 100%;
+  }
+}

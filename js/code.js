@@ -1,4 +1,4 @@
-// make area of sections
+// make array of sections
 const sections = document.querySelectorAll(".section");
 // use bubbling
 // or propagation

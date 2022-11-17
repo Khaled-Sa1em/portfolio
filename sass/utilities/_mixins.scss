@@ -1,202 +1,209 @@
 @mixin flex-center-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @mixin flex-center-column {
-    @include flex-center-row;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+  @include flex-center-row;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @mixin flex-start-column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 @mixin flex-end-column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 @mixin flex-between-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @mixin flex-around-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @mixin flex-evenly-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @mixin flex-between-column {
-    @include flex-between-row;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+  @include flex-between-row;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @mixin flex-around-column {
-    @include flex-around-row;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+  @include flex-around-row;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @mixin flex-evenly-column {
-    @include flex-evenly-row;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+  @include flex-evenly-row;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @mixin hero-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 @mixin reset-bg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @mixin fade($type) {
-    @if $type == "hide" {
-        visibility: hidden;
-        opacity: 0;
-    } @else if $type == "show" {
-        visibility: visible;
-        opacity: 1;
-    }
+  @if $type == "hide" {
+    visibility: hidden;
+    opacity: 0;
+  } @else if $type == "show" {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 @mixin transition-ease($prop) {
-    -webkit-transition: $prop 0.3s ease;
-    -o-transition: $prop 0.3s ease;
-    transition: $prop 0.3s ease;
+  -webkit-transition: $prop 0.3s ease;
+  -o-transition: $prop 0.3s ease;
+  transition: $prop 0.3s ease;
 }
 
 @mixin transition-ease-in($prop) {
-    -webkit-transition: $prop 0.3s ease-in;
-    -o-transition: $prop 0.3s ease-in;
-    transition: $prop 0.3s ease-in;
+  -webkit-transition: $prop 0.3s ease-in;
+  -o-transition: $prop 0.3s ease-in;
+  transition: $prop 0.3s ease-in;
 }
 
 @mixin transition-ease-out($prop) {
-    -webkit-transition: $prop 0.3s ease-out;
-    -o-transition: $prop 0.3s ease-out;
-    transition: $prop 0.3s ease-out;
+  -webkit-transition: $prop 0.3s ease-out;
+  -o-transition: $prop 0.3s ease-out;
+  transition: $prop 0.3s ease-out;
 }
 
 @mixin transition-ease-in-out($prop) {
-    -webkit-transition: $prop 0.3s ease-in-out;
-    -o-transition: $prop 0.3s ease-in-out;
-    transition: $prop 0.3s ease-in-out;
+  -webkit-transition: $prop 0.3s ease-in-out;
+  -o-transition: $prop 0.3s ease-in-out;
+  transition: $prop 0.3s ease-in-out;
 }
 
 @mixin breakpoint($point) {
-    @if $point == tablet {
-        @media only screen and (max-width: 992px) {
-            @content;
-        }
+  @if $point == tablet {
+    @media only screen and (max-width: 992px) {
+      @content;
     }
+  }
 
-    @if $point == mobile {
-        @media only screen and (max-width: 576px) {
-            @content;
-        }
+  @if $point == mobile {
+    @media only screen and (max-width: 576px) {
+      @content;
     }
+  }
 
-    @if $point == large {
-        @media only screen and (max-width: 1200px) {
-            @content;
-        }
+  @if $point == large {
+    @media only screen and (max-width: 1200px) {
+      @content;
     }
+  }
 }
 
 @mixin animation-left-right($duration) {
-    -webkit-animation-name: move-left-right;
-    animation-name: move-left-right;
-    -webkit-animation-duration: $duration;
-    animation-duration: $duration;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-play-state: running;
-    animation-play-state: running;
+  -webkit-animation-name: move-left-right;
+  animation-name: move-left-right;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 
 @mixin hero-pic($path-bg-img) {
-    width: 100%;
-    height: 100vh;
-    @include reset-bg;
-    background-image: url($path-bg-img);
-    background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  @include reset-bg;
+  background-image: url($path-bg-img);
+  background-attachment: fixed;
+}
+
+// ! khaled
+// ! i don't know how to deal or handle font size
+// ! but here i've used golden ratio = 1.618
+@mixin font-size($num) {
+  font-size: calc(16px * $num * 1.618);
 }

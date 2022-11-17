@@ -1,21 +1,27 @@
 .container {
-    height: 100%;
-    padding-inline: 1.8rem;
-    margin-left: auto;
-    margin-right: auto;
+  height: 100%;
+  padding-inline: 1.8rem;
+  margin-left: auto;
+  margin-right: auto;
 
-    /* * Small */
-    @media (min-width: 768px) {
-        width: 750px;
-    }
+  /* * Small */
+  @media (min-width: 768px) {
+    width: 750px;
+  }
 
-    /* * Medium */
-    @media (min-width: 992px) {
-        width: 970px;
-    }
+  /* * Medium */
+  @media (min-width: 992px) {
+    width: 970px;
+  }
 
-    /* * Large */
-    @media (min-width: 1200px) {
-        width: 1170px;
-    }
+  /* * Large */
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  //! khaled
+  /* * extra Large */
+  @media (min-width: 1400px) {
+    width: 1350px;
+  }
 }

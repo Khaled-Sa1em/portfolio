@@ -1,0 +1,33 @@
+// ! khaled
+.landing {
+  background: $darker-blue;
+  .container {
+    @include flex-center-row;
+    flex-wrap: wrap;
+    .landing--text {
+    //   flex: 2;
+      text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+        0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff;
+      .landing--title {
+        color: #fff;
+        margin-bottom: 0.5em;
+      }
+      .landing--description {
+        color: $darker-blue;
+      }
+    }
+    .landing--portrait {
+        width:min(100% , 400px) ;
+    //   flex: 1;
+    }
+  }
+}
+
+// ! correct it and tell what should i do
+@media screen and (max-width: 992px) {
+  .landing {
+    .container {
+    //   flex-direction: column;
+    }
+  }
+}

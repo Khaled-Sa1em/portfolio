@@ -1,3 +1,34 @@
+.container {
+  height: 100%;
+  padding-inline: 1.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* * Small */
+  /* * Medium */
+  /* * Large */
+  /* * extra Large */
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1350px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +41,49 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+a,
+svg,
+.tap-light-remove {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+h1 {
+  font-size: 77.664px;
+}
+
+h2 {
+  font-size: 25.888px;
+}
+
+h3 {
+  font-size: 12.944px;
+}
+
+h4 {
+  font-size: 6.472px;
+}
+
+p {
+  font-size: 18px;
 }
 
 /* nunito-200 - latin */
@@ -139,4 +213,42 @@ body {
   font-weight: 900;
   src: url("../assets/fonts/nunito/nunito-v25-latin-900italic.eot"); /* IE9 Compat Modes */
   src: local(""), url("../assets/fonts/nunito/nunito-v25-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/nunito/nunito-v25-latin-900italic.woff2") format("woff2"), url("../assets/fonts/nunito/nunito-v25-latin-900italic.woff") format("woff"), url("../assets/fonts/nunito/nunito-v25-latin-900italic.ttf") format("truetype"), url("../assets/fonts/nunito/nunito-v25-latin-900italic.svg#Nunito") format("svg"); /* Legacy iOS */
+}
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+}
+
+.landing {
+  background: #202c39;
+}
+.landing .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.landing .container .landing--text {
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff;
+}
+.landing .container .landing--text .landing--title {
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+.landing .container .landing--text .landing--description {
+  color: #202c39;
+}
+.landing .container .landing--portrait {
+  width: min(100%, 400px);
 }

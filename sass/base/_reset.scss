@@ -10,6 +10,10 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
+  //! khaled
+  // i don't is it right to give body size or not
+  width: 100vw;
+  height: 100vh;
 }
 
 a {
@@ -31,4 +35,23 @@ a,
 svg,
 .tap-light-remove {
   -webkit-tap-highlight-color: transparent !important;
+}
+
+// ! i don't know what should i do actually
+// with font-size
+h1 {
+  @include font-size(3);
+}
+h2 {
+  @include font-size(1);
+}
+h3 {
+  @include font-size(0.5);
+}
+h4 {
+  @include font-size(0.25);
+}
+
+p {
+  font-size: 18px;
 }

@@ -240,15 +240,23 @@ p {
   flex-wrap: wrap;
 }
 .landing .container .landing--text {
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff;
+  flex: 2;
 }
 .landing .container .landing--text .landing--title {
-  color: #fff;
+  width: 100%;
+  min-width: 600px;
   margin-bottom: 0.5em;
+  color: #fff;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff;
 }
 .landing .container .landing--text .landing--description {
-  color: #202c39;
+  color: #283845;
 }
 .landing .container .landing--portrait {
+  flex: 1;
+  min-width: 300px;
+}
+.landing .container .landing--portrait .img {
   width: min(100%, 400px);
+  border-radius: 50%;
 }

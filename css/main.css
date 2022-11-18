@@ -40,6 +40,10 @@
   margin-top: 2em;
 }
 
+.active--link {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;

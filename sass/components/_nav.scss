@@ -1,36 +1,44 @@
 .nav {
   z-index: 1111;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 10px;
   position: fixed;
   font-weight: bold;
 
+  // height: 240px;
+  width: 80px;
+
   a {
     font-size: 1rem;
-    //! i don't know why font-weight doesn't work
-    font-weight: bold;
-    text-transform: uppercase;
-    background: transparent;
     width: 8em;
     height: 8em;
+    //! i don't know why font-weight doesn't work
     display: flex;
     justify-content: center;
     align-items: center;
-    color: map-get($colors, "orange");
-    margin: 1em 0;
     border: 10px solid map-get($colors, "orange");
     border-radius: 100%;
-    transition: margin-bottom .5s , height .3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: map-get($colors, "orange");
+
+    // position
+    position: absolute;
+    bottom: 0;
   }
+
   .list--item:last-child {
     a {
-      margin-top: unset;
-      margin-bottom: unset;
+      background: red;
     }
   }
+  a:hover {
+    transition: margin-bottom 0.5s, height 0.3s;
+    height: calc(8em - 10px);
+  }
   a:active {
-    transition: margin-bottom .5s , height .3s;
-    margin-bottom: 5em;
     height: calc(8em - 20px);
+    border-color: red;
+    color: red;
   }
 }

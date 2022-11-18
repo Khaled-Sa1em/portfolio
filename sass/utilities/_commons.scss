@@ -32,3 +32,9 @@
   transition: right 1s;
   z-index: 1000;
 }
+
+// for links
+.display--link {
+  position: static !important;
+  margin-top: 2em;
+}

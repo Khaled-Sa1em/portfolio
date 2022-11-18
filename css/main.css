@@ -35,6 +35,11 @@
   z-index: 1000;
 }
 
+.display--link {
+  position: static !important;
+  margin-top: 2em;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -302,33 +307,36 @@ p {
 
 .nav {
   z-index: 1111;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 10px;
   position: fixed;
   font-weight: bold;
+  width: 80px;
 }
 .nav a {
   font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: transparent;
   width: 8em;
   height: 8em;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ff6f61;
-  margin: 1em 0;
   border: 10px solid #ff6f61;
   border-radius: 100%;
-  transition: margin-bottom 0.5s, height 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff6f61;
+  position: absolute;
+  bottom: 0;
 }
 .nav .list--item:last-child a {
-  margin-top: unset;
-  margin-bottom: unset;
+  background: red;
+}
+.nav a:hover {
+  transition: margin-bottom 0.5s, height 0.3s;
+  height: calc(8em - 10px);
 }
 .nav a:active {
-  transition: margin-bottom 0.5s, height 0.3s;
-  margin-bottom: 5em;
   height: calc(8em - 20px);
+  border-color: red;
+  color: red;
 }

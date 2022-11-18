@@ -1,10 +1,5 @@
 .landing {
   background: $darker-blue;
-  
-  position: absolute;
-  top: 0;
-  right: 100%;
-  transition: right 1s;
 
   .container {
     @include flex-center-row;

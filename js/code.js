@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll(".nav--link");
 // then remove active class from all section
 // then give to the section with id we abstract from target id
 const nav = document.addEventListener("click", (e) => {
-  if (e.target.id.substring(0, e.target.id.indexOf("-")) !== "nav") {
+  if (e.target.id && e.target.id.substring(0, e.target.id.indexOf("-")) !== "nav") {
     // remove active class from all sections first
     sections.forEach((section) => section.classList.remove("active"));
 

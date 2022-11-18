@@ -344,3 +344,11 @@ p {
   border-color: red;
   color: red;
 }
+
+.portfolio {
+  background: rgb(0, 255, 64);
+  position: absolute;
+  top: 0;
+  right: 100%;
+  transition: right 1s;
+}

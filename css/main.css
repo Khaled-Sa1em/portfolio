@@ -1,3 +1,8 @@
+@media (min-width: 40em) {
+  :root {
+    /* --fs-500: 1.125rem; */
+  }
+}
 .container {
   height: 100%;
   padding-inline: 1.8rem;
@@ -82,23 +87,11 @@ svg,
 }
 
 h1 {
-  font-size: 77.664px;
-}
-
-h2 {
-  font-size: 25.888px;
-}
-
-h3 {
-  font-size: 12.944px;
-}
-
-h4 {
-  font-size: 6.472px;
+  font-size: clamp(3.5rem, 7vw + 1rem, 8rem);
 }
 
 p {
-  font-size: 18px;
+  font-size: 2rem;
 }
 
 /* nunito-200 - latin */
@@ -275,6 +268,7 @@ p {
 .landing .container .landing--portrait .img {
   width: min(100%, 300px);
   border-radius: 50%;
+  border: 7px solid #f4f4f4;
 }
 
 @media screen and (max-width: 992px) {

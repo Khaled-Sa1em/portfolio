@@ -203,6 +203,6 @@
 
 // ! i don't know how to deal or handle font size
 // ! but here i've used golden ratio = 1.618
-@mixin font-size($num) {
-  font-size: calc(16px * $num * 1.618);
-}
+// @mixin font-size($num) {
+//   font-size: calc(16px * $num * 1.618);
+// }

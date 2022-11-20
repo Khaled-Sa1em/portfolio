@@ -20,11 +20,12 @@
 
     .landing--portrait {
       flex: 1.5;
-      // background: red;
       text-align: center;
+      
       .img {
         width: min(100%, 300px);
         border-radius: 50%;
+        border: 7px solid map-get($colors, "accent-light");
       }
     }
   }
@@ -32,6 +33,7 @@
 
 @media screen and (max-width: 992px) {
   .landing {
+    
     .container {
       flex-direction: column-reverse;
       gap: 4em;

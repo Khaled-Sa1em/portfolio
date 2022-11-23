@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is just a portfolio website",
+  "keywords": [
+    "HTML",
+    "HTML5",
+    "CSS",
+    "CSS3",
+    "SCSS"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "sass --watch .\\sass\\main.scss .\\css\\main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khaled-Sa1em/portfolio.git"
+  },
+  "author": "Khaled Mohamed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Khaled-Sa1em/portfolio/issues"
+  },
+  "homepage": "https://github.com/Khaled-Sa1em/portfolio#readme"
+}

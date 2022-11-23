@@ -1,0 +1,131 @@
+.navbar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6%;
+    right: 6%;
+    @include flex-center-row;
+    background-color: map-get($colors, "dark-blue");
+    cursor: pointer;
+    z-index: 99999999;
+    -webkit-tap-highlight-color: transparent !important;
+
+    &::before {
+        content: "\f192";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "fontello";
+        font-size: 2.3rem;
+        color: lighten(map-get($colors, "light-beige"), 20%);
+    }
+
+    &__list {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 50%;
+
+        &--item {
+            position: absolute;
+            left: 13.5%;
+            @include fade(hide);
+
+            &:nth-child(1) {
+                top: -75%;
+                @include transition(all, 0.2, ease-in-out, 0.2);
+
+                &.active {
+                    @include fade(show);
+                    top: -100%;
+                }
+            }
+
+            &:nth-child(2) {
+                top: -180%;
+                @include transition(all, 0.2, ease-in-out, 0.33);
+
+                &.active {
+                    @include fade(show);
+                    top: -207%;
+                }
+            }
+
+            &:nth-child(3) {
+                top: -280%;
+                @include transition(all, 0.2, ease-in-out, 0.4);
+
+                &.active {
+                    @include fade(show);
+                    top: -315%;
+                }
+            }
+
+            &:nth-child(4) {
+                top: -370%;
+                @include transition(all, 0.2, ease-in-out, 0.53);
+
+                &.active {
+                    @include fade(show);
+                    top: -428%;
+                }
+            }
+
+            &-link {
+                width: 4.5rem;
+                height: 4.5rem;
+                border-radius: 50%;
+                @include flex-center-row;
+                font-size: 1.7rem;
+                color: lighten(map-get($colors, "light-beige"), 20%);
+                background-color: map-get($colors, "dark-blue");
+                @include transition(background-color, 0.2, ease-in-out, 0);
+
+                &::before {
+                    content: attr(data-title);
+                    width: 10rem;
+                    padding: 1rem 0.6rem;
+                    border-radius: 0.5rem;
+                    position: absolute;
+                    top: 0.2rem;
+                    left: -14rem;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-size: 1.5rem;
+                    @include prefixing(user-select, none);
+                    @include fade(hide);
+                    color: map-get($colors, "accent-light");
+                    background-color: map-get($colors, "dark-blue");
+                    z-index: 99999999;
+                    @include transition(all, 0.2, ease-in, 0);
+
+                    @include breakpoint(mobile) {
+                        content: none;
+                    }
+                }
+
+                &:hover {
+                    background-color: lighten(map-get($colors, "darker-blue"), 10%);
+                }
+
+                &:hover::before {
+                    @include fade(show);
+
+                    @include breakpoint(tablet) {
+                        left: -14rem;
+                    }
+                }
+
+                &:focus::before {
+                    left: -14rem;
+
+                    @include breakpoint(tablet) {
+                        left: -14rem;
+                    }
+                }
+            }
+        }
+    }
+}

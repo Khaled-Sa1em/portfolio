@@ -1,121 +1,90 @@
+@mixin prefixing($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin prefixing-values($prop, $value) {
+  #{$prop}: -webkit-#{$value};
+  #{$prop}: -moz-#{$value};
+  #{$prop}: -ms-#{$value};
+  #{$prop}: -o-#{$value};
+  #{$prop}: #{$value};
+}
+
 @mixin flex-center-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, center);
+  @include prefixing(align-items, center);
 }
 
 @mixin flex-center-column {
-  @include flex-center-row;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, center);
+  @include prefixing(align-items, center);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin flex-start-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, center);
+  @include prefixing(align-items, flex-start);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin flex-end-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, center);
+  @include prefixing(align-items, flex-end);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin flex-between-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-between);
+  @include prefixing(align-items, flex-start);
 }
 
 @mixin flex-around-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-around);
+  @include prefixing(align-items, flex-start);
 }
 
 @mixin flex-evenly-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-evenly);
+  @include prefixing(align-items, flex-start);
 }
 
 @mixin flex-between-column {
-  @include flex-between-row;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-between);
+  @include prefixing(align-items, center);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin flex-around-column {
-  @include flex-around-row;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-around);
+  @include prefixing(align-items, center);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin flex-evenly-column {
-  @include flex-evenly-row;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @include prefixing(display, flex);
+  @include prefixing(justify-content, space-around);
+  @include prefixing(align-items, center);
+  @include prefixing(flex-direction, column);
 }
 
 @mixin hero-img {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  @include prefixing(transform, translate(-50%, -50%));
 }
 
 @mixin reset-bg {
@@ -134,28 +103,18 @@
   }
 }
 
-@mixin transition-ease($prop) {
-  -webkit-transition: $prop 0.3s ease;
-  -o-transition: $prop 0.3s ease;
-  transition: $prop 0.3s ease;
-}
-
-@mixin transition-ease-in($prop) {
-  -webkit-transition: $prop 0.3s ease-in;
-  -o-transition: $prop 0.3s ease-in;
-  transition: $prop 0.3s ease-in;
-}
-
-@mixin transition-ease-out($prop) {
-  -webkit-transition: $prop 0.3s ease-out;
-  -o-transition: $prop 0.3s ease-out;
-  transition: $prop 0.3s ease-out;
-}
-
-@mixin transition-ease-in-out($prop) {
-  -webkit-transition: $prop 0.3s ease-in-out;
-  -o-transition: $prop 0.3s ease-in-out;
-  transition: $prop 0.3s ease-in-out;
+@mixin transition($prop, $time, $func, $delaying) {
+  @if $func == ease {
+    @include prefixing(transition, $prop #{$time}s ease #{$delaying}s);
+  } @else if $func == ease-in {
+    @include prefixing(transition, $prop #{$time}s ease-in #{$delaying}s);
+  } @else if $func == ease-in-out {
+    @include prefixing(transition, $prop #{$time}s ease-in-out #{$delaying}s);
+  } @else if $func == ease-out {
+    @include prefixing(transition, $prop #{$time}s ease-out #{$delaying}s);
+  } @else if $func == linear {
+    @include prefixing(transition, $prop #{$time}s linear #{$delaying}s);
+  }
 }
 
 @mixin breakpoint($point) {

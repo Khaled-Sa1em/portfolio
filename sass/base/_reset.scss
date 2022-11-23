@@ -10,10 +10,9 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  //! khaled
-  // i don't is it right to give body size or not
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -22,6 +21,7 @@ a {
 
 ul {
   list-style-type: none;
+  padding: 0 !important;
 }
 
 img {
@@ -52,7 +52,7 @@ svg,
 //   @include font-size(0.25);
 // }
 
-h1{
+h1 {
   font-size: $fs-xl;
 }
 

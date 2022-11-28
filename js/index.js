@@ -1,11 +1,16 @@
-import { navbar, navbarList } from './constants.js';
+import { navbarPrimary, navbarPrimaryList, navbarSocial, navbarSocialList } from './constants.js';
 import { NavItems } from './data/NavbarItems.js';
-import { setNavbar, openNavList, closeNavList } from "./navbar.js";
+import { SocialNavItems } from './data/SocialNavItems.js';
+import { setNavbar, openNavList, closeNavList, openSocialNavList, closeSocialNavList } from "./navbar.js";
 
+// * not important because you actually put js script tag in the end of body tag
 document.addEventListener("DOMContentLoaded", () => {
-    setNavbar(navbarList, NavItems);
+    setNavbar(navbarPrimaryList, NavItems , 'primary');
+    setNavbar(navbarSocialList, SocialNavItems , 'social');
 });
 
-navbar.addEventListener("click", () => openNavList());
+navbarPrimary.addEventListener("click", () => openNavList());
+navbarSocial.addEventListener("click", () => openSocialNavList());
 
 closeNavList();
+closeSocialNavList();

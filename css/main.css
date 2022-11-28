@@ -335,8 +335,6 @@ p {
   height: 6rem;
   border-radius: 50%;
   position: absolute;
-  bottom: 6%;
-  right: 6%;
   -webkit-display: flex;
   -moz-display: flex;
   -ms-display: flex;
@@ -356,6 +354,7 @@ p {
   cursor: pointer;
   z-index: 99999999;
   -webkit-tap-highlight-color: transparent !important;
+  bottom: 6%;
 }
 .navbar::before {
   content: "\f192";
@@ -379,57 +378,9 @@ p {
   visibility: hidden;
   opacity: 0;
 }
-.navbar__list--item:nth-child(1) {
-  top: -75%;
-  -webkit-transition: all 0.2s ease-in-out 0.2s;
-  -moz-transition: all 0.2s ease-in-out 0.2s;
-  -ms-transition: all 0.2s ease-in-out 0.2s;
-  -o-transition: all 0.2s ease-in-out 0.2s;
-  transition: all 0.2s ease-in-out 0.2s;
-}
-.navbar__list--item:nth-child(1).active {
+.navbar__list--item.active {
   visibility: visible;
   opacity: 1;
-  top: -100%;
-}
-.navbar__list--item:nth-child(2) {
-  top: -180%;
-  -webkit-transition: all 0.2s ease-in-out 0.33s;
-  -moz-transition: all 0.2s ease-in-out 0.33s;
-  -ms-transition: all 0.2s ease-in-out 0.33s;
-  -o-transition: all 0.2s ease-in-out 0.33s;
-  transition: all 0.2s ease-in-out 0.33s;
-}
-.navbar__list--item:nth-child(2).active {
-  visibility: visible;
-  opacity: 1;
-  top: -207%;
-}
-.navbar__list--item:nth-child(3) {
-  top: -280%;
-  -webkit-transition: all 0.2s ease-in-out 0.4s;
-  -moz-transition: all 0.2s ease-in-out 0.4s;
-  -ms-transition: all 0.2s ease-in-out 0.4s;
-  -o-transition: all 0.2s ease-in-out 0.4s;
-  transition: all 0.2s ease-in-out 0.4s;
-}
-.navbar__list--item:nth-child(3).active {
-  visibility: visible;
-  opacity: 1;
-  top: -315%;
-}
-.navbar__list--item:nth-child(4) {
-  top: -370%;
-  -webkit-transition: all 0.2s ease-in-out 0.53s;
-  -moz-transition: all 0.2s ease-in-out 0.53s;
-  -ms-transition: all 0.2s ease-in-out 0.53s;
-  -o-transition: all 0.2s ease-in-out 0.53s;
-  transition: all 0.2s ease-in-out 0.53s;
-}
-.navbar__list--item:nth-child(4).active {
-  visibility: visible;
-  opacity: 1;
-  top: -428%;
 }
 .navbar__list--item-link {
   width: 4.5rem;
@@ -511,5 +462,76 @@ p {
     left: -14rem;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
+.navbar__primary {
+  right: 6%;
+}
+.navbar__primary__list--item:nth-child(1) {
+  top: -75%;
+  -webkit-transition: all 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+.navbar__primary__list--item:nth-child(1).active {
+  top: -100%;
+}
+.navbar__primary__list--item:nth-child(2) {
+  top: -180%;
+  -webkit-transition: all 0.2s ease-in-out 0.33s;
+  -moz-transition: all 0.2s ease-in-out 0.33s;
+  -ms-transition: all 0.2s ease-in-out 0.33s;
+  -o-transition: all 0.2s ease-in-out 0.33s;
+  transition: all 0.2s ease-in-out 0.33s;
+}
+.navbar__primary__list--item:nth-child(2).active {
+  top: -207%;
+}
+.navbar__primary__list--item:nth-child(3) {
+  top: -280%;
+  -webkit-transition: all 0.2s ease-in-out 0.4s;
+  -moz-transition: all 0.2s ease-in-out 0.4s;
+  -ms-transition: all 0.2s ease-in-out 0.4s;
+  -o-transition: all 0.2s ease-in-out 0.4s;
+  transition: all 0.2s ease-in-out 0.4s;
+}
+.navbar__primary__list--item:nth-child(3).active {
+  top: -315%;
+}
+.navbar__primary__list--item:nth-child(4) {
+  top: -370%;
+  -webkit-transition: all 0.2s ease-in-out 0.53s;
+  -moz-transition: all 0.2s ease-in-out 0.53s;
+  -ms-transition: all 0.2s ease-in-out 0.53s;
+  -o-transition: all 0.2s ease-in-out 0.53s;
+  transition: all 0.2s ease-in-out 0.53s;
+}
+.navbar__primary__list--item:nth-child(4).active {
+  top: -428%;
+}
+.navbar__social {
+  left: 6%;
+  width: 4.5rem;
+  height: 4.5rem;
+  transition: left 1.5s, bottom 1.5s, transform 0s, background 1s;
+}
+.navbar__social.active {
+  background: green;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.navbar__social.active li {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 2s !important;
+  transition-delay: 1.5s;
+}
+.navbar__social.active li.active {
+  transform: var(--translate);
+  opacity: 1;
+  transition: transform 1s, opacity 1s;
+  transition-delay: 1.5s;
+}

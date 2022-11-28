@@ -330,6 +330,13 @@ p {
     opacity: 0;
   }
 }
+:root {
+  --transition-time: 1.5s;
+  --transform-time: 1.5s;
+  --opacity-time: 1.5s;
+  --transition-delay: 1s;
+}
+
 .navbar {
   width: 6rem;
   height: 6rem;
@@ -513,25 +520,42 @@ p {
   left: 6%;
   width: 4.5rem;
   height: 4.5rem;
-  transition: left 1.5s, bottom 1.5s, transform 0s, background 1s;
+  transition: left var(--transition-time), bottom var(--transition-time), transform 0s, background 1s;
+  transition-delay: var(--transition-delay);
+}
+.navbar__social::before {
+  content: "\f232";
+}
+.navbar__social li {
+  transition: all var(--transform-time);
+  transition-delay: var(--transition-delay);
+}
+.navbar__social li a:before {
+  content: none !important;
+}
+.navbar__social li.selected {
+  transform: translateY(-2000%);
+  transition: all 3s;
 }
 .navbar__social.active {
   background: green;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
+  transition-delay: unset;
 }
 .navbar__social.active li {
-  position: absolute;
   left: 0;
-  opacity: 0;
-  transform: translate(0, 0);
-  transition: all 2s !important;
-  transition-delay: 1.5s;
 }
 .navbar__social.active li.active {
   transform: var(--translate);
   opacity: 1;
-  transition: transform 1s, opacity 1s;
-  transition-delay: 1.5s;
+  transition: transform var(--transform-time), opacity var(--opacity-time);
+  transition-delay: var(--transition-delay);
+}
+.navbar__social.active li a {
+  transition: transform 0.7s;
+}
+.navbar__social.active li a:hover {
+  transform: scale(1.1);
 }

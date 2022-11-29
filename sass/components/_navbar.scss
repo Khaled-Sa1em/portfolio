@@ -5,14 +5,12 @@
   --transition-delay: 1s;
 }
 
-// * you have done great job <3
-
-// ! read my comments in ( red )  =>>>> line (96)
 .navbar {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   position: absolute;
+  bottom: 6%;
   @include flex-center-row;
   background-color: map-get($colors, "dark-blue");
   cursor: pointer;
@@ -101,8 +99,6 @@
       }
     }
   }
-  // ! i 've done small modification on this tag to help me use your style =>>> (.navbar__primary)
-  bottom: 6%;
 
   &__primary {
     right: 6%;
@@ -153,18 +149,17 @@
       }
     }
   }
-  // ! social nav
+
   &__social {
-    &::before {
-      content: "\f232";
-    }
     left: 6%;
     width: 4.5rem;
     height: 4.5rem;
-    transition: left var(--transition-time), bottom var(--transition-time),
-      transform 0s, background 1s;
-    // to wait for items to close or disappear
+    transition: left var(--transition-time), bottom var(--transition-time), transform 0s, background 1s;
     transition-delay: var(--transition-delay);
+
+    &::before {
+      content: "\e804";
+    }
 
     li {
       transition: all var(--transform-time);
@@ -178,18 +173,14 @@
 
       &.selected {
         transform: translateY(-2000%);
-        // why all ?
         transition: all 3s;
       }
     }
 
     &.active {
-      background: green;
       bottom: 50%;
       left: 50%;
-
       transform: translate(-50%, 50%);
-
       transition-delay: unset;
 
       li {
@@ -198,10 +189,10 @@
         &.active {
           transform: var(--translate);
           opacity: 1;
-          transition: transform var(--transform-time),
-            opacity var(--opacity-time);
+          transition: transform var(--transform-time), opacity var(--opacity-time);
           transition-delay: var(--transition-delay);
         }
+
         a {
           transition: transform 0.7s;
 

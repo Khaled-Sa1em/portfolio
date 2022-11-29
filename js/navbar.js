@@ -93,11 +93,11 @@ export const closeSocialNavList = () => {
 };
 
 
-// open social media link 
+// open social media link
 // const openLink = function (e) {
 //     this.classList.add('selected');
 // }
 
-// when press on social links 
+// when press on social links
 // const links = document.querySelectorAll('.navbar__social__list .navbar__list--item-link');
 

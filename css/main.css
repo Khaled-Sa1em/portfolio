@@ -1,8 +1,3 @@
-@media (min-width: 40em) {
-  :root {
-    /* --fs-500: 1.125rem; */
-  }
-}
 .container {
   height: 100%;
   padding-inline: 1.8rem;
@@ -342,6 +337,7 @@ p {
   height: 6rem;
   border-radius: 50%;
   position: absolute;
+  bottom: 6%;
   -webkit-display: flex;
   -moz-display: flex;
   -ms-display: flex;
@@ -361,7 +357,6 @@ p {
   cursor: pointer;
   z-index: 99999999;
   -webkit-tap-highlight-color: transparent !important;
-  bottom: 6%;
 }
 .navbar::before {
   content: "\f192";
@@ -524,7 +519,7 @@ p {
   transition-delay: var(--transition-delay);
 }
 .navbar__social::before {
-  content: "\f232";
+  content: "\e804";
 }
 .navbar__social li {
   transition: all var(--transform-time);
@@ -538,7 +533,6 @@ p {
   transition: all 3s;
 }
 .navbar__social.active {
-  background: green;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
@@ -559,3 +553,5 @@ p {
 .navbar__social.active li a:hover {
   transform: scale(1.1);
 }
+
+/*# sourceMappingURL=main.css.map */

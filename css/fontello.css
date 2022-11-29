@@ -1,7 +1,8 @@
 @font-face {
   font-family: "fontello";
   src: url("../assets/icons/font/fontello.eot?20934456");
-  src: url("../assets/icons/font/fontello.eot?20934456#iefix") format("embedded-opentype"),
+  src: url("../assets/icons/font/fontello.eot?20934456#iefix")
+      format("embedded-opentype"),
     url("../assets/icons/font/fontello.woff2?20934456") format("woff2"),
     url("../assets/icons/font/fontello.woff?20934456") format("woff"),
     url("../assets/icons/font/fontello.ttf?20934456") format("truetype"),
@@ -45,6 +46,10 @@
   content: "\e803";
 }
 
+.icon-globe:before {
+  content: "\e804";
+}
+
 .icon-twitter:before {
   content: "\f099";
 }
@@ -63,10 +68,6 @@
 
 .icon-instagram:before {
   content: "\f16d";
-}
-
-.icon-Headphone:before {
-  content: "\e99c";
 }
 
 .icon-dot-circled:before {

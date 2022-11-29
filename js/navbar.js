@@ -4,12 +4,9 @@
  * * Function to iterate on the items and set all into DOM in navbarList.
  */
 export const setNavbar = (elementToAppendIn, itemsInList = [], navType) => {
-    // ! for -> performance for => is faster than forEach 
-    // ! but here it's not a big deal
     itemsInList.forEach((el, index) => {
 
         if (navType === 'primary') {
-
             const oneRow =
                 `<li class="navbar__list--item navbar__primary__list--item">
                     <a href="#" class="navbar__list--item-link" data-title="${el.itemTitle}">
@@ -18,7 +15,6 @@ export const setNavbar = (elementToAppendIn, itemsInList = [], navType) => {
                 </li>`;
 
             elementToAppendIn.insertAdjacentHTML('beforeend', oneRow);
-
         } else {
 
             const theta = 360 / itemsInList.length;
@@ -30,8 +26,8 @@ export const setNavbar = (elementToAppendIn, itemsInList = [], navType) => {
                 return;
             }
 
-            let x = radius * Math.sin(th * Math.PI / 180)
-            let y = radius * Math.cos(th * Math.PI / 180)
+            let x = radius * Math.sin(th * Math.PI / 180);
+            let y = radius * Math.cos(th * Math.PI / 180);
 
             const oneRow =
                 `<li class="navbar__list--item " style="--translate:translate(${x}px,${-y}px); --transition-delay: 0.${index}s">
@@ -62,55 +58,59 @@ export const setNavbar = (elementToAppendIn, itemsInList = [], navType) => {
  * @returns void
  */
 export const openNavList = () => {
-    //  ! check this ==>>>>  (navbar__primary__list) instead of (navbar__list) 
     document.querySelectorAll(".navbar__primary__list li")?.forEach((el) => el.classList.toggle("active"));
 };
 
-// !* copy i will develop it 
+/**
+ * * Function to show the social navbar when click.
+ * @returns void
+ */
 export const openSocialNavList = () => {
     document.querySelector('#navbar-social').classList.toggle('active');
+
     document.querySelectorAll(".navbar__social__list li")?.forEach((el) => {
         el.classList.toggle("active");
-        // remove selected class 
         el.classList.remove("selected");
     });
 };
 
 /**
- * * Function to close navbar when click on anywhere.
+ * * Function to close ANY navbar when click on anywhere.
+ * * @param selectorNavbar
+ * @returns void
+ */
+const closeGeneralNavbar = (selectorNavbar) => {
+    document.addEventListener("click", (e) => {
+        if (e.target.id !== selectorNavbar) {
+            document.querySelectorAll(`#${selectorNavbar} li`)?.forEach((el) => el.classList.remove("active"));
+        }
+    });
+}
+
+/**
+ * * Function to close items of the primary navbar.
  * @returns void
  */
 export const closeNavList = () => {
     document.addEventListener("click", (e) => {
-        if (e.target.id !== "navbar-primary-list") {
-            document.querySelectorAll(".navbar__primary__list li")?.forEach((el) => el.classList.remove("active"));
-
-        }
+        closeGeneralNavbar("navbar-primary-list");
     });
 };
 
-// !* copy i will develop it 
+/**
+ * * Function to close social navbar.
+ * @returns void
+ */
 export const closeSocialNavList = () => {
     document.addEventListener("click", (e) => {
-        // open social link
         if (e.target.parentNode.classList.contains("navbar__list--item-link")) {
             e.target.parentNode.parentNode.classList.add("selected");
         }
 
         if (e.target.id !== "navbar-social-list") {
-            document.querySelectorAll(".navbar__social__list li")?.forEach((el) => el.classList.remove("active"));
             document.querySelector('#navbar-social').classList.remove('active');
         }
 
+        closeGeneralNavbar("navbar-social-list")
     });
 };
-
-
-// open social media link
-// const openLink = function (e) {
-//     this.classList.add('selected');
-// }
-
-// when press on social links
-// const links = document.querySelectorAll('.navbar__social__list .navbar__list--item-link');
-

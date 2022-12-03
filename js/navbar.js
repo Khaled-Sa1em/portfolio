@@ -58,6 +58,8 @@ export const openNavList = () => {
   document
     .querySelectorAll(".navbar__primary__list li")
     ?.forEach((el) => el.classList.toggle("active"));
+  console.log("open----", "from openNavList");
+  console.log("------------------------------------");
 };
 
 /**
@@ -67,9 +69,16 @@ export const openNavList = () => {
 export const openSocialNavList = () => {
   document.querySelector("#navbar-social").classList.toggle("active");
 
+  console.log("1 open----", "from openSocialNavList");
+  console.log("------------------------------------");
   document.querySelectorAll(".navbar__social__list li")?.forEach((el) => {
-    el.classList.toggle("active");
+    el.classList.add("active"); // ! why just add
     el.classList.remove("selected");
+
+    // !1
+    document.querySelector("#main").classList.add("overlay");
+    console.log("2 open----", "from openSocialNavList main");
+    console.log("------------------------------------");
   });
 };
 
@@ -78,12 +87,24 @@ export const openSocialNavList = () => {
  * * @param selectorNavbar
  * @returns void
  */
+// !called 2 times why??
+// !!! this function doesn't has any importance 
 const closeGeneralNavbar = (selectorNavbar) => {
   document.addEventListener("click", (e) => {
     if (e.target.id !== selectorNavbar) {
       document
         .querySelectorAll(`#${selectorNavbar} li`)
         ?.forEach((el) => el.classList.remove("active"));
+    }
+    // !2
+    if (document.querySelector("main").classList.contains("overlay")) {
+      console.log("if close----", "from closeGeneralNavbar main");
+      console.log("------------------------------------");
+
+      document.querySelector("main").classList.remove("overlay");
+    } else {
+      console.log("else close----", "from closeGeneralNavbar main");
+      console.log("------------------------------------");
     }
   });
 };
@@ -92,9 +113,14 @@ const closeGeneralNavbar = (selectorNavbar) => {
  * * Function to close items of the primary navbar.
  * @returns void
  */
+// ! and here ---> i think thats is very wrong 
+// !! cause every time you call this function you new handler to click event in this element 
+// !! i think you should have dispatched(=> fire it) event here now give it a handler
 export const closeNavList = () => {
   document.addEventListener("click", (e) => {
     closeGeneralNavbar("navbar-primary-list");
+    console.log("1 close----", "from closeNavList main");
+    console.log("------------------------------------");
   });
 };
 
@@ -102,9 +128,11 @@ export const closeNavList = () => {
  * * Function to close social navbar.
  * @returns void
  */
+
+// !! and here also like function before 
 export const closeSocialNavList = () => {
   document.addEventListener("click", (e) => {
-    if (e.target.parentNode.classList.contains("navbar__list--item-link")) {
+    if (e.target.parentNode.classList?.contains("navbar__list--item-link")) {
       e.target.parentNode.parentNode.classList.add("selected");
     }
 
@@ -112,9 +140,16 @@ export const closeSocialNavList = () => {
       e.target.id !== "navbar-social-list" &&
       document.getElementById("navbar-social").classList.contains("active")
     ) {
-      document.getElementById("navbar-social").click();
+      // document.getElementById("navbar-social").click();
+      document.getElementById("navbar-social").classList.remove("active");
+    } else if (
+      document.getElementById("navbar-social").classList.contains("active")
+    ) {
+      // document.getElementById("navbar-social").click();
     }
 
+    console.log("close----", "from closeSocialNavList");
+    console.log("------------------------------------");
     closeGeneralNavbar("navbar-social-list");
   });
 };

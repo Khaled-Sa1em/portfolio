@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 navbarPrimary.addEventListener("click", () => openNavList());
 navbarSocial.addEventListener("click", () => {
   openSocialNavList();
-  toggleOverlay();
+  // toggleOverlay();
 });
 
 
@@ -31,6 +31,6 @@ closeSocialNavList();
 
 
 // toggle overlay
-export const toggleOverlay = () => {
-  document.querySelector("#main").classList.toggle("overlay");
-};
+// export const toggleOverlay = () => {
+//   document.querySelector("#main").classList.toggle("overlay");
+// };

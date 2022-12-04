@@ -11,26 +11,40 @@ import {
   openNavList,
   closeNavList,
   openSocialNavList,
-  closeSocialNavList,
 } from "./navbar.js";
+// debugger;
 
 document.addEventListener("DOMContentLoaded", () => {
   setNavbar(navbarPrimaryList, NavItems, "primary");
   setNavbar(navbarSocialList, SocialNavItems, "social");
 });
 
-navbarPrimary.addEventListener("click", () => openNavList());
-navbarSocial.addEventListener("click", () => {
-  openSocialNavList();
-  // toggleOverlay();
+// primary navbar
+navbarPrimary.addEventListener("click", (e) => {
+  //! stop bubbling events
+  e.stopPropagation();
+  if (navbarSocial.classList.contains("active")) {
+    navbarSocial.click();
+  }
+  openNavList();
+  toggleOverlay();
 });
 
+// social navbar
+navbarSocial.addEventListener("click", (e) => {
+  //! stop bubbling events
+  e.stopPropagation();
+  if (document.getElementById('navbar-primary').children[1].children[0].classList.contains('active')) {
+    navbarPrimary.click();
+  }
+  openSocialNavList();
+  toggleOverlay();
+});
 
 closeNavList();
-closeSocialNavList();
-
+// closeSocialNavList();
 
 // toggle overlay
-// export const toggleOverlay = () => {
-//   document.querySelector("#main").classList.toggle("overlay");
-// };
+export const toggleOverlay = () => {
+  document.querySelector("#main").classList.toggle("overlay");
+};

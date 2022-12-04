@@ -546,7 +546,7 @@ p {
   content: none !important;
 }
 .navbar__social li.selected {
-  transform: translateY(-2000%);
+  transform: translateY(-2000%) !important;
   transition: all 3s;
 }
 .navbar__social.active {
